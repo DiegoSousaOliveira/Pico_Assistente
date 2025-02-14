@@ -1,19 +1,19 @@
 # Pico_Assistente
 Esse projeto mostrar a integração da placa raspberry pi pico w com a assistente virtual e a integração com  Whatsapp para executa comandos remotamente.
-Esse projetos visa simular como seria a integração da placa com a assitente virtual e o Whatsapp.
+Esse projetos visa simular como seria a integração da placa com a assistente virtual e o Whatsapp.
 
 ## Descrição do Projeto
-Esse projeto cria um servidor feito para rodar na placa respbarry pi pico w e executa comados atráves de Sockets
+Esse projeto criar um servidor feito para rodar na placa respbarry pi pico w e executa comados atráves de Sockets
 
 ## Video demonstrativo
- - Parte 1: Integração com a Assistente Virtaul.
+ - Parte 1: Integração com a Assistente Virtual.
    
  - Parte 2: Integração com o Whatsapp.
 
 
-## Dependencia:
- - Link do reposito para baixar e configura a assitente Virtual: https://github.com/DiegoSousaOliveira/Assistente_virtual.git
- - Link do reposito para baixoare configura o servidor para a conexão do servidor da placa com o Whatsapp: https://github.com/DiegoSousaOliveira/api_waha.git
+## Dependências:
+ - Link do repositório para baixar e configurar a assistente Virtual: https://github.com/DiegoSousaOliveira/Assistente_virtual.git
+ - Link do repositório para baixar e configurar o servidor para a conexão do servidor da placa com o Whatsapp: https://github.com/DiegoSousaOliveira/api_waha.git
 
 ## Etapas para a execução do projeto 
  - Baixe esse o projeto no seu computador.
