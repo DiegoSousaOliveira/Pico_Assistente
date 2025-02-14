@@ -12,8 +12,8 @@ Esse projeto cria um servidor feito para rodar na placa respbarry pi pico w e ex
 
 
 ## Dependencia:
- - Link do reposito onde para baixo e configura a assitente Virtual: https://github.com/DiegoSousaOliveira/Assistente_virtual.git
- - Link do reposito onde para baixo e configura o servidor para a conexão do servidor da placa com o Whatsapp: https://github.com/DiegoSousaOliveira/api_waha.git
+ - Link do reposito para baixar e configura a assitente Virtual: https://github.com/DiegoSousaOliveira/Assistente_virtual.git
+ - Link do reposito para baixoare configura o servidor para a conexão do servidor da placa com o Whatsapp: https://github.com/DiegoSousaOliveira/api_waha.git
 
 ## Etapas para a execução do projeto 
  - Baixe esse o projeto no seu computador.
