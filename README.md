@@ -6,7 +6,8 @@ Esse projetos visa simular como seria a integração da placa com a assistente v
 Esse projeto criar um servidor feito para rodar na placa respbarry pi pico w e executa comados atráves de Sockets
 
 ## Video demonstrativo
- - Parte 1: Integração com a Assistente Virtual.
+ - Parte 1: Integração com a Assistente Virtual:
+    [https://drive.google.com/file/d/1ekq9qEhA85sirMVsBrJmEgEbJLHJwplH/view?usp=sharing](https://drive.google.com/file/d/1ekq9qEhA85sirMVsBrJmEgEbJLHJwplH/view?usp=sharing)
    
  - Parte 2: Integração com o Whatsapp.
 
