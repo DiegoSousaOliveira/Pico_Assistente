@@ -7,9 +7,16 @@ Esse projeto criar um servidor feito para rodar na placa respbarry pi pico w e e
 
 ## Video demonstrativo
  - Parte 1: Integração com a Assistente Virtual:
-    [https://drive.google.com/file/d/1ekq9qEhA85sirMVsBrJmEgEbJLHJwplH/view?usp=sharing](https://drive.google.com/file/d/1ekq9qEhA85sirMVsBrJmEgEbJLHJwplH/view?usp=sharing)
+    - Video Completo(Explicação e Teste):
+      [https://drive.google.com/file/d/1ekq9qEhA85sirMVsBrJmEgEbJLHJwplH/view?usp=sharing](https://drive.google.com/file/d/1ekq9qEhA85sirMVsBrJmEgEbJLHJwplH/view?usp=sharing)
+    - Parte de Teste:
+      [https://drive.google.com/file/d/1vAwOgfNF3X51tS_gCiopfDU5CdoomgPp/view?usp=sharing](https://drive.google.com/file/d/1vAwOgfNF3X51tS_gCiopfDU5CdoomgPp/view?usp=sharing)
    
  - Parte 2: Integração com o Whatsapp.
+    - Video Completo(Explicação e Teste):
+      [https://drive.google.com/file/d/1b-NJOQ7rWGN2NrS6O6N3uLldeSc-Fj49/view?usp=sharing](https://drive.google.com/file/d/1b-NJOQ7rWGN2NrS6O6N3uLldeSc-Fj49/view?usp=sharing)
+    - Parte de Teste:
+      [https://drive.google.com/file/d/1b01PR1WIBmzhlMTuwLF5zkXuzTMMrBke/view?usp=sharing](https://drive.google.com/file/d/1b01PR1WIBmzhlMTuwLF5zkXuzTMMrBke/view?usp=sharing)
 
 
 ## Dependências:
