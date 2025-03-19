@@ -83,8 +83,19 @@ int getIndex(int x, int y) {
   }
 }
 
-int start_animation() {
+int draw_piskel(int matriz[5][5][3]) {
+  // Desenhando Sprite contido na matriz.c
+  for (int linha = 0; linha < 5; linha++) {
+    for(int coluna = 0; coluna < 5; coluna++){
+      int posicao = getIndex(linha, coluna);
+      npSetLED(posicao, matriz[coluna][linha][0], matriz[coluna][linha][1], matriz[coluna][linha][2]);
+    }
+  }
+  npWrite();
+  sleep_ms(2000);
+}
 
+int start_animation() {
   // Inicializa entradas e saídas.
   stdio_init_all();
 
@@ -97,7 +108,7 @@ int start_animation() {
   npWrite(); // Escreve os dados nos LEDs.
 
   // Não faz mais nada. Loop infinito.
-  for (int index; index <= 5; index++) {
+  for (int index; index <= 2; index++) {
     int matriz[5][5][3] = {
       {{0, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {0, 0, 0}},
       {{255, 0, 0}, {68, 255, 0}, {255, 0, 0}, {68, 255, 0}, {255, 0, 0}},
@@ -105,32 +116,20 @@ int start_animation() {
       {{255, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {255, 0, 0}},
       {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}}};
 
-    // Desenhando Sprite contido na matriz.c
-    for (int linha = 0; linha < 5; linha++) {
-      for(int coluna = 0; coluna < 5; coluna++){
-        int posicao = getIndex(linha, coluna);
-        npSetLED(posicao, matriz[coluna][linha][0], matriz[coluna][linha][1], matriz[coluna][linha][2]);
-      }
-    }
-    npWrite();
-    sleep_ms(2000);
+    draw_piskel(matriz);
     npClear();
+
     int matriz2[5][5][3] = {
       {{0, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {0, 0, 0}},
       {{255, 0, 0}, {0, 0, 0}, {255, 0, 0}, {0, 0, 0}, {255, 0, 0}},
       {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}},
       {{255, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {255, 0, 0}},
       {{255, 0, 0}, {255, 0, 0}, {0, 0, 0}, {255, 0, 0}, {255, 0, 0}}};
-
-    // Desenhando Sprite contido na matriz.c
-    for (int linha = 0; linha < 5; linha++) {
-      for(int coluna = 0; coluna < 5; coluna++){
-        int posicao = getIndex(linha, coluna);
-        npSetLED(posicao, matriz2[coluna][linha][0], matriz2[coluna][linha][1], matriz2[coluna][linha][2]);
-      }
-    }
-    npWrite();
-    sleep_ms(2000);
+      
+    draw_piskel(matriz2);
     npClear();
   }
+  npClear();
+  npWrite();
 }
+

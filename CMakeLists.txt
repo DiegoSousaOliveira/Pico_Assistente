@@ -35,7 +35,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(PicoAssistant PicoAssistant.c neopixel_pio.c )
+add_executable(PicoAssistant PicoAssistant.c neopixel_pio.c buzzer_pwm.c display_oled.c inc/ssd1306_i2c.c )
 
 pico_set_program_name(PicoAssistant "PicoAssistant")
 pico_set_program_version(PicoAssistant "0.1")
@@ -49,7 +49,9 @@ pico_enable_stdio_usb(PicoAssistant 1)
 
 # Add the standard library to the build
 target_link_libraries(PicoAssistant
-        pico_stdlib)
+        pico_stdlib
+        hardware_pwm
+        hardware_clocks)
 
 # Add the standard include files to the build
 target_include_directories(PicoAssistant PRIVATE
@@ -61,6 +63,7 @@ target_link_libraries(PicoAssistant
         pico_cyw43_arch_lwip_threadsafe_background
         hardware_pio
         hardware_clocks
+        hardware_i2c
         )
 
 pico_add_extra_outputs(PicoAssistant)

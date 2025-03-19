@@ -4,10 +4,13 @@
 #include <string.h>
 #include <stdio.h>
 #include "neopixel_pio.h"
+#include "buzzer_pwm.h"
+#include "display_oled.h"
+#include "inc/ssd1306.h"
 
-#define LED_PIN 12          // Define o pino do LED
-#define WIFI_SSID "EDNA"  // Substitua pelo nome da sua rede Wi-Fi
-#define WIFI_PASS "wwork197" // Substitua pela senha da sua rede Wi-Fi
+#define LED_PIN 12    
+#define WIFI_SSID "EDNA" 
+#define WIFI_PASS "wwork197"
 
 // Função de callback para processar requisições HTTP
 static err_t http_callback(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err) {
@@ -21,11 +24,25 @@ static err_t http_callback(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_
     char *request = (char *)p->payload;
 
     if (strstr(request, "LED_ON")) {
-        gpio_put(LED_PIN, 1);  // Liga o LED
+        gpio_put(LED_PIN, 1);
     } else if (strstr(request, "LED_OFF")) {
-        gpio_put(LED_PIN, 0);  // Desliga o LED
+        gpio_put(LED_PIN, 0);
     } else if (strstr(request, "MATRIZ_LED_ANIMATION_ON")) {
         start_animation();
+    } else if (strstr(request, "BUZZER_ON")) {
+        play_music();
+    } else if (strstr(request, "Alert 1")) {
+        char *text[] = {
+            "  Alerta para  ",
+            "     Tomar     ",
+            "    Remedio!   "};
+
+        text_in_display_oled(text, 3);
+        play_music();
+
+        // Desligar o display OLED
+        uint8_t commands[] = {0xAE};
+        ssd1306_send_command_list(commands, 1);
     }
 
     // Libera o buffer recebido
@@ -61,7 +78,7 @@ static void start_http_server(void) {
 }
 
 int main() {
-    stdio_init_all();  // Inicializa a saída padrão
+    stdio_init_all();
     sleep_ms(10000);
     printf("Iniciando servidor HTTP\n");
 
@@ -92,13 +109,16 @@ int main() {
 
     // Inicia o servidor HTTP
     start_http_server();
+
+    // Configuração do BUZZER
+    pwm_init_buzzer(BUZZER_PIN);
     
     // Loop principal
     while (true) {
-        cyw43_arch_poll();  // Necessário para manter o Wi-Fi ativo
+        cyw43_arch_poll();
         sleep_ms(100);
     }
 
-    cyw43_arch_deinit();  // Desliga o Wi-Fi (não será chamado, pois o loop é infinito)
+    cyw43_arch_deinit();
     return 0;
 }
